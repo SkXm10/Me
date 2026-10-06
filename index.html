@@ -7,7 +7,8 @@
     <title>For My Monkey</title>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap');
+        /* Fonts: italic styles now loaded properly; Poppins gets heavier weights for readability */
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Poppins:wght@400;500;600&display=swap');
 
         :root {
             --midnight-deep: #0f0a2e;
@@ -17,12 +18,10 @@
             --blush-soft: #ffd9e3;
             --rosegold: #e8b8a0;
             --starlight: #f6ecff;
-            --ink: #cfc4e8;
+            --ink: #e4dcf5;
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             font-family: 'Poppins', Arial, sans-serif;
@@ -37,7 +36,6 @@
             position: relative;
         }
 
-        /* Ambient starfield */
         .stars {
             position: fixed;
             inset: 0;
@@ -57,13 +55,8 @@
         }
 
         @keyframes twinkle {
-            0% {
-                opacity: 0.5;
-            }
-
-            100% {
-                opacity: 1;
-            }
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
         }
 
         .particle {
@@ -76,23 +69,13 @@
         }
 
         @keyframes fall {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0;
-            }
-
-            10% {
-                opacity: 1;
-            }
-
-            100% {
-                transform: translateY(105vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0; }
         }
 
         .card {
-            background: rgba(24, 15, 56, 0.65);
+            background: rgba(24, 15, 56, 0.72);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             padding: 44px 36px;
@@ -108,20 +91,11 @@
             animation: fadeIn 0.9s ease-in-out;
         }
 
-        .card.active {
-            display: block;
-        }
+        .card.active { display: block; }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(24px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .main-title {
@@ -129,6 +103,7 @@
             font-style: italic;
             font-weight: 700;
             font-size: 42px;
+            line-height: 1.2;
             background: linear-gradient(135deg, var(--starlight), var(--blush) 60%, var(--rosegold));
             -webkit-background-clip: text;
             background-clip: text;
@@ -140,7 +115,7 @@
         h3 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700;
-            font-size: 26px;
+            font-size: 28px;
             color: var(--blush-soft);
             margin-top: 0;
             letter-spacing: 0.3px;
@@ -149,8 +124,8 @@
         p {
             color: var(--ink);
             line-height: 1.8;
-            font-size: 15px;
-            font-weight: 300;
+            font-size: 15.5px;
+            font-weight: 400;
         }
 
         .emoji-row {
@@ -161,9 +136,9 @@
 
         button {
             padding: 15px 28px;
-            font-size: 15.5px;
+            font-size: 18px;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 0.4px;
             border: none;
             border-radius: 50px;
@@ -184,9 +159,7 @@
             box-shadow: 0 18px 30px rgba(255, 143, 171, 0.4);
         }
 
-        .primary-btn:active {
-            transform: translateY(-1px);
-        }
+        .primary-btn:active { transform: translateY(-1px); }
 
         .tabs {
             display: flex;
@@ -200,7 +173,7 @@
             flex: 1;
             border-radius: 12px;
             padding: 10px 6px;
-            font-size: 12.5px;
+            font-size: 15px;
             box-shadow: none;
             border: 1px solid rgba(255, 179, 198, 0.3);
             width: auto;
@@ -216,15 +189,13 @@
         .tab-content {
             display: none;
             text-align: left;
-            background: rgba(255, 217, 227, 0.05);
+            background: rgba(255, 217, 227, 0.06);
             padding: 22px;
             border-radius: 16px;
             border-left: 3px solid var(--blush);
         }
 
-        .tab-content.default-tab {
-            display: block;
-        }
+        .tab-content.default-tab { display: block; }
 
         .countdown-container {
             background: rgba(255, 179, 198, 0.07);
@@ -235,7 +206,7 @@
         }
 
         .countdown-container p.label {
-            font-size: 12px;
+            font-size: 12.5px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             color: var(--blush-soft);
@@ -253,27 +224,27 @@
             background: rgba(15, 10, 46, 0.6);
             border-radius: 12px;
             padding: 10px 12px;
-            min-width: 56px;
+            min-width: 58px;
             border: 1px solid rgba(255, 179, 198, 0.2);
         }
 
         .timer-unit .num {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 22px;
+            font-size: 24px;
             color: var(--blush);
             display: block;
         }
 
         .timer-unit .unit-label {
-            font-size: 10px;
+            font-size: 11px;
             color: var(--ink);
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .places-box {
-            background: rgba(255, 217, 227, 0.05);
+            background: rgba(255, 217, 227, 0.06);
             border-radius: 16px;
             padding: 22px;
             text-align: left;
@@ -281,13 +252,8 @@
             margin-top: 20px;
         }
 
-        .place-item {
-            margin-bottom: 18px;
-        }
-
-        .place-item:last-child {
-            margin-bottom: 0;
-        }
+        .place-item { margin-bottom: 18px; }
+        .place-item:last-child { margin-bottom: 0; }
 
         .place-photo {
             width: 100%;
@@ -306,6 +272,8 @@
             gap: 8px;
         }
 
+        .place-caption p { margin: 0; }
+
         .place-emoji {
             font-size: 16px;
             flex-shrink: 0;
@@ -314,17 +282,18 @@
         .place-item strong {
             color: var(--blush-soft);
             font-family: 'Cormorant Garamond', serif;
-            font-size: 16px;
+            font-size: 19px;
+            font-weight: 700;
         }
 
         .closing-note {
             margin-top: 26px;
-            font-weight: 400;
+            font-weight: 600;
             font-style: italic;
             font-family: 'Cormorant Garamond', serif;
             color: var(--blush-soft);
-            font-size: 18px;
-            line-height: 1.7;
+            font-size: 20px;
+            line-height: 1.65;
         }
 
         .signature {
@@ -332,7 +301,7 @@
             font-size: 12.5px;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            color: rgba(207, 196, 232, 0.6);
+            color: rgba(228, 220, 245, 0.75);
         }
     </style>
 </head>
@@ -438,6 +407,120 @@
                         right there next to me watching it turn gold 🧡</p>
                 </div>
             </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE with your photo link or file name -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE"
+                    alt="Meiji Jingu Gaien, Tokyo" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🍂</span>
+                    <p><strong>明治神宮外苑 (Meiji Jingu Gaien)</strong> — a slow walk together under the golden
+                        ginkgo trees, right here in my Tokyo, with leaves falling around us 🍁🤍</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Odaiba, Tokyo" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🌃</span>
+                    <p><strong>Odaiba</strong> — walking by the bay at sunset until the Rainbow Bridge lights up, and
+                        you lean on my shoulder 🌈🤍</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Shibuya Sky, Tokyo" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🏙️</span>
+                    <p><strong>Shibuya Sky</strong> — the whole city glowing below us, and I get to say "this is my
+                        Tokyo" while holding you close ✨</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Winter illuminations, Tokyo" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🎄</span>
+                    <p><strong>Winter Illuminations</strong> — streets covered in tiny lights, warm hands in cold
+                        pockets, and you smiling at every single one 💡🥰</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Shinjuku Gyoen, Tokyo" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🍁</span>
+                    <p><strong>Shinjuku Gyoen</strong> — a quiet garden walk, no rush, just us and the autumn colors
+                        🍂💞</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Tokyo Tower at night" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🗼</span>
+                    <p><strong>Tokyo Tower</strong> — simple and classic, standing under its glow at night like it was
+                        lit just for you 🧡</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Yokohama Minato Mirai" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🎡</span>
+                    <p><strong>Yokohama</strong> — the harbor lights, a ride on the Ferris wheel, and a slow walk by
+                        the water 🌊💫</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Kamakura and Enoshima" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">⛩️</span>
+                    <p><strong>Kamakura &amp; Enoshima</strong> — old temples in the morning, the sea breeze in the
+                        afternoon, and one of the prettiest sunsets for the two of us 🌇</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Hakone" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">♨️</span>
+                    <p><strong>Hakone</strong> — a cozy onsen getaway by the lake, with Mt. Fuji watching over us if
+                        the sky is kind 🗻💕</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Lake Kawaguchiko with Mt. Fuji" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🗻</span>
+                    <p><strong>Kawaguchiko</strong> — sitting by the lake with Mt. Fuji in front of us, quiet
+                        and perfect, with your head on my shoulder 🤍</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Kyoto" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🏯</span>
+                    <p><strong>Kyoto</strong> — the red gates of Fushimi Inari, the bamboo of Arashiyama, and Gion
+                        lit up in the evening, all with your hand in mine 🎎</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Otaru canal, Hokkaido" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">❄️</span>
+                    <p><strong>Otaru</strong> — a canal glowing with lamps while snow falls softly, and I keep you
+                        warm ☃️🕯️</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Miyajima floating torii gate" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">⛩️</span>
+                    <p><strong>Miyajima</strong> — the floating gate in the sea at sunset, like something out of a
+                        dream we're both walking through 🌅</p>
+                </div>
+            </div>
+            <div class="place-item">
+                <!-- ADD YOUR IMAGE: replace PUT_YOUR_IMAGE_LINK_HERE -->
+                <img class="place-photo" src="PUT_YOUR_IMAGE_LINK_HERE" alt="Kenroku-en, Kanazawa" onerror="this.style.display='none'">
+                <div class="place-caption"><span class="place-emoji">🌸</span>
+                    <p><strong>Kanazawa</strong> — Kenroku-en garden and quiet old streets, a slower, softer kind
+                        of day together 🍵💗</p>
+                </div>
+            </div>
+        
         </div>
 
         <p class="closing-note">"Distance means so little when someone means so much." 🌍❤️ I want to see all of
